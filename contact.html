@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>સંપર્ક તેમજ પરામર્શ | Contact & Sanskar Inquiry</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="lang-hi">
+
+  <!-- Top Bar -->
+  <div class="top-shloka-bar">
+    ॐ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय। मृत्योर्माऽमृतं गमय॥ ॐ शान्तिः शान्तिः शान्तिः॥
+  </div>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="om-symbol-nav">ॐ</span>
+        <div class="brand-text">
+          <h1 data-i18n="siteTitle">वैदिक संस्कार विधि</h1>
+          <span data-i18n="siteSubtitle">सोलह संस्कार</span>
+        </div>
+      </a>
+
+      <!-- Language Selector -->
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="hi">हिंदी</button>
+        <button class="lang-btn" data-lang="gu">ગુજરાતી</button>
+        <button class="lang-btn" data-lang="en">English</button>
+      </div>
+
+      <nav>
+        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link" data-i18n="navHome">मुखपृष्ठ</a></li>
+          <li><a href="index.html#sanskars-section" class="nav-link" data-i18n="navSanskars">सभी 16 संस्कार</a></li>
+          <li><a href="about.html" class="nav-link" data-i18n="navAbout">संस्कार परिचय</a></li>
+          <li><a href="contact.html" class="nav-link active" data-i18n="navContact">संपर्क / परामर्श</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="detail-hero" style="padding: 50px 20px;">
+    <div class="container">
+      <h1 class="detail-title" style="font-size: 2.4rem;" data-i18n="contactHeroTitle">संस्कार मार्गदर्शन एवं परामर्श</h1>
+      <p class="detail-meaning" style="font-size: 1.15rem;" data-i18n="contactHeroSubtitle">शुभ मुहूर्त, विधि विधान एवं योग्य पुरोहित चयन हेतु संदेश भेजें</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <main class="container" style="max-width: 800px; margin: 40px auto 70px;">
+    
+    <div class="content-card fade-in">
+      <h2 data-i18n="contactFormTitle">परामर्श हेतु संपर्क फॉर्म</h2>
+      <p style="margin-bottom: 25px; color: var(--text-muted);" data-i18n="contactFormSubtitle">
+        यदि आप किसी विशिष्ट संस्कार के शुभ मुहूर्त, सामग्री सूची (हवन सामग्री) या वैदिक विधि के संबंध में जानकारी प्राप्त करना चाहते हैं, तो कृपया नीचे दिए गए फॉर्म को भरें।
+      </p>
+
+      <form id="contactForm">
+        
+        <div class="form-group">
+          <label for="name" data-i18n="contactLabelName">पूरा नाम (Full Name) *</label>
+          <input type="text" id="name" class="form-control" required placeholder="उदा. रमेश कुमार शर्मा" data-i18n="contactPlaceholderName">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-group">
+            <label for="phone" data-i18n="contactLabelPhone">दूरभाष / मोबाइल (Phone) *</label>
+            <input type="tel" id="phone" class="form-control" required placeholder="+91 98765 43210" data-i18n="contactPlaceholderPhone">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contactLabelEmail">ईमेल पता (Email) *</label>
+            <input type="email" id="email" class="form-control" required placeholder="yourname@example.com" data-i18n="contactPlaceholderEmail">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sanskarSelect" data-i18n="contactLabelSanskar">इच्छित संस्कार (Select Sanskar of Interest) *</label>
+          <select id="sanskarSelect" class="form-control" required>
+            <!-- Dynamically populated according to active language -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="location" data-i18n="contactLabelLocation">शहर / स्थान (City / Location) *</label>
+          <input type="text" id="location" class="form-control" required placeholder="उदा. अहमदाबाद, मुंबई, दिल्ली..." data-i18n="contactPlaceholderLocation">
+        </div>
+
+        <div class="form-group">
+          <label for="message" data-i18n="contactLabelMessage">आपका संदेश या प्रश्न (ऐच्छिक / Optional)</label>
+          <textarea id="message" rows="4" class="form-control" placeholder="मुहूर्त, सामग्री अथवा विधि के संबंध में अपना प्रश्न लिखें..." data-i18n="contactPlaceholderMessage"></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <button type="submit" class="btn-primary" style="padding: 14px 40px; font-size: 1.05rem;" data-i18n="contactSubmitBtn">
+            WhatsApp પર વિગતો મોકલો 💬
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <!-- WhatsApp Selection Modal -->
+  <div id="waModal" class="modal-overlay">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="closeWaModal" aria-label="Close">&times;</button>
+      <div style="font-size: 2.2rem; margin-bottom: 8px;">📲</div>
+      <h3 class="modal-title" data-i18n="modalTitle">કોને સંપર્ક કરવો છે?</h3>
+      <p class="modal-subtitle" data-i18n="modalSubtitle">કૃપા કરીને WhatsApp પર પૂછપરછ મોકલવા માટે પસંદ કરો:</p>
+      
+      <div class="wa-options-grid">
+        <button type="button" class="wa-option-card" data-phone="918128721106" data-name="Tithi Arya">
+          <div class="wa-person-info">
+            <span class="wa-person-name" data-i18n="modalTithi">તિથી આર્ય (Tithi Arya)</span>
+            <span class="wa-person-phone">📞 +91 81287 21106</span>
+          </div>
+          <span class="wa-action-badge">
+            <span>💬</span> WhatsApp
+          </span>
+        </button>
+
+        <button type="button" class="wa-option-card" data-phone="917984723878" data-name="Priyanka Arya">
+          <div class="wa-person-info">
+            <span class="wa-person-name" data-i18n="modalPriyanka">પ્રિયંકા આર્ય (Priyanka Arya)</span>
+            <span class="wa-person-phone">📞 +91 79847 23878</span>
+          </div>
+          <span class="wa-action-badge">
+            <span>💬</span> WhatsApp
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3 data-i18n="siteTitle">वैदिक संस्कार विधि</h3>
+        <p class="footer-quote" data-i18n="footerQuote">“संस्कारो हि नाम स भवति यस्मिन् जाते पदार्थो भवति योग्यः कस्यचिदर्थस्य।”</p>
+        <div class="auspicious-symbols">
+          <span>ॐ</span>
+          <span>卐</span>
+          <span>☸</span>
+          <span>🪷</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-i18n="footerHeadingSanskar">संस्कार श्रेणियां</h4>
+        <ul>
+          <li><a href="sanskar.html?id=1" data-i18n="footerSanskar1">1. गर्भाधान संस्कार</a></li>
+          <li><a href="sanskar.html?id=5" data-i18n="footerSanskar5">5. नामकरण संस्कार</a></li>
+          <li><a href="sanskar.html?id=11" data-i18n="footerSanskar11">11. उपनयन संस्कार</a></li>
+          <li><a href="sanskar.html?id=15" data-i18n="footerSanskar15">15. विवाह संस्कार</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4 data-i18n="footerHeadingGuidance">मार्गदर्शन</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">मुखपृष्ठ</a></li>
+          <li><a href="about.html" data-i18n="navAbout">संस्कार परिचय</a></li>
+          <li><a href="contact.html" data-i18n="navContact">संपर्क एवं परामर्श</a></li>
+          <li><a href="tel:+918128721106" data-i18n="footerContactTithi">📞 તિથી આર્ય : +91 81287 21106</a></li>
+          <li><a href="tel:+917984723878" data-i18n="footerContactPriyanka">📞 પ્રિયંકા આર્ય : +91 79847 23878</a></li>
+          <li><a href="https://www.instagram.com/vadik_sanskar_vidhi?cplk=djF2MG9iY3FyODhv" target="_blank" style="color: #F9E79F;">📷 vadik_sanskar_vidhi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="copyright">© 2026 वैदिक संस्कार विधि। सनातन वैदिक संस्कृति के संरक्षण हेतु समर्पित।</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
