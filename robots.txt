@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skgrow20.github.io/vaidik-sanskar-vidhi/sitemap.xml
