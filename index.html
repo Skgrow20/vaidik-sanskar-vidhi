@@ -32,8 +32,8 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=7">
-  <link rel="stylesheet" href="animations.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="animations.css?v=8">
   <style>
     /* Register Buttons and Banner */
     .btn-register {
@@ -61,58 +61,135 @@
       border-color: #FFF !important;
       color: #FFFFFF !important;
     }
-    .nav-container {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 14px !important;
+    @media (min-width: 901px) {
+      .mobile-toggle {
+        display: none !important;
+      }
+      .nav-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 14px !important;
+      }
+      .nav-menu {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      .nav-menu li {
+        display: flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .nav-link {
+        white-space: nowrap !important;
+        font-size: 0.92rem !important;
+        padding: 6px 10px !important;
+        text-decoration: none !important;
+      }
+      .nav-link.nav-register-btn {
+        background: linear-gradient(135deg, #FF6F00, #B71C1C) !important;
+        color: #FFFFFF !important;
+        border: 1.5px solid #FFD54F !important;
+        padding: 0 18px !important;
+        height: 36px !important;
+        border-radius: 20px !important;
+        font-weight: 700 !important;
+        font-size: 0.88rem !important;
+        box-shadow: 0 3px 10px rgba(230, 81, 0, 0.3) !important;
+        transition: all 0.25s ease !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        margin: 0 !important;
+      }
+      .nav-link.nav-register-btn:hover {
+        transform: translateY(-2px) scale(1.03) !important;
+        box-shadow: 0 6px 16px rgba(230, 81, 0, 0.45) !important;
+        background: linear-gradient(135deg, #E65100, #880E4F) !important;
+        color: #FFFFFF !important;
+      }
     }
-    .nav-menu {
-      display: flex !important;
-      align-items: center !important;
-      gap: 14px !important;
-      list-style: none !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      flex-shrink: 0 !important;
-    }
-    .nav-menu li {
-      display: flex !important;
-      align-items: center !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-    .nav-link {
-      white-space: nowrap !important;
-      font-size: 0.92rem !important;
-      padding: 6px 10px !important;
-      text-decoration: none !important;
-    }
-    .nav-link.nav-register-btn {
-      background: linear-gradient(135deg, #FF6F00, #B71C1C) !important;
-      color: #FFFFFF !important;
-      border: 1.5px solid #FFD54F !important;
-      padding: 0 18px !important;
-      height: 36px !important;
-      border-radius: 20px !important;
-      font-weight: 700 !important;
-      font-size: 0.88rem !important;
-      box-shadow: 0 3px 10px rgba(230, 81, 0, 0.3) !important;
-      transition: all 0.25s ease !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      line-height: 1 !important;
-      text-decoration: none !important;
-      margin: 0 !important;
-    }
-    .nav-link.nav-register-btn:hover {
-      transform: translateY(-2px) scale(1.03) !important;
-      box-shadow: 0 6px 16px rgba(230, 81, 0, 0.45) !important;
-      background: linear-gradient(135deg, #E65100, #880E4F) !important;
-      color: #FFFFFF !important;
+
+    /* Tablet & Mobile Screens (<= 900px) */
+    @media (max-width: 900px) {
+      .navbar {
+        position: relative !important;
+      }
+      .mobile-toggle {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        font-size: 1.8rem !important;
+        color: var(--maroon) !important;
+        cursor: pointer !important;
+        padding: 2px 8px !important;
+        line-height: 1 !important;
+      }
+      .nav-menu {
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #FFFFFF !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 18px 16px 24px 16px !important;
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18) !important;
+        border-bottom: 2px solid var(--gold) !important;
+        z-index: 9999 !important;
+        gap: 10px !important;
+        list-style: none !important;
+        margin: 0 !important;
+      }
+      .nav-menu.active {
+        display: flex !important;
+      }
+      .nav-menu li {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .nav-link {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 10px 14px !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        color: var(--text-dark) !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+      }
+      .nav-link.nav-register-btn {
+        width: 85% !important;
+        max-width: 280px !important;
+        margin: 6px auto 0 auto !important;
+        text-align: center !important;
+        justify-content: center !important;
+        height: 42px !important;
+        font-size: 1rem !important;
+        background: linear-gradient(135deg, #FF6F00, #B71C1C) !important;
+        color: #FFFFFF !important;
+        border: 1.5px solid #FFD54F !important;
+        border-radius: 24px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        box-shadow: 0 4px 14px rgba(230, 81, 0, 0.35) !important;
+      }
     }
     /* Critical Mobile Layout - Guaranteed Immediate Rendering */
     @media (max-width: 600px) {
@@ -416,7 +493,7 @@
     </div>
   </footer>
 
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+  <script src="data.js?v=8"></script>
+  <script src="main.js?v=8"></script>
 </body>
 </html>

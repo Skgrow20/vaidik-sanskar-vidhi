@@ -1528,6 +1528,13 @@ body {
   }
   .mobile-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--maroon);
+    cursor: pointer;
+    padding: 2px 8px;
+    line-height: 1;
   }
   .nav-menu {
     position: absolute;
@@ -1536,14 +1543,39 @@ body {
     right: 0;
     background: #fff;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    align-items: center;
+    padding: 20px 16px;
+    box-shadow: 0 16px 35px rgba(0,0,0,0.18);
     display: none;
     border-bottom: 2px solid var(--gold);
-    z-index: 1001;
+    z-index: 9999;
+    gap: 12px;
   }
   .nav-menu.active {
     display: flex;
+  }
+  .nav-menu li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 14px;
+    font-size: 1.05rem;
+  }
+  .nav-link.nav-register-btn {
+    width: 85%;
+    max-width: 280px;
+    margin: 6px auto 0 auto;
+    text-align: center;
+    justify-content: center;
+    height: 42px;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
