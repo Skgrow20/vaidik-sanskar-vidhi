@@ -115,18 +115,29 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 24px;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
-  font-size: 0.98rem;
-  padding: 6px 12px;
+  font-size: 0.92rem;
+  padding: 6px 10px;
   border-radius: 6px;
   transition: var(--transition);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -640,6 +651,140 @@ body {
   background: #FFF2DF;
   border-color: var(--primary-saffron);
   transform: translateY(-2px);
+}
+
+/* Eye-Catching Register Buttons & Home Registration Banner */
+.btn-register {
+  background: linear-gradient(135deg, #FF6F00, #B71C1C);
+  color: #FFFFFF !important;
+  border: 2px solid #FFD54F;
+  padding: 14px 34px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 25px rgba(230, 81, 0, 0.42);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.btn-register:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px rgba(230, 81, 0, 0.55), 0 0 20px rgba(255, 213, 79, 0.5);
+  background: linear-gradient(135deg, #E65100, #880E4F);
+  border-color: #FFF;
+  color: #FFFFFF !important;
+}
+
+.nav-link.nav-register-btn {
+  background: linear-gradient(135deg, #FF6F00, #B71C1C) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FFD54F !important;
+  padding: 0 18px !important;
+  height: 36px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 3px 10px rgba(230, 81, 0, 0.3) !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+}
+
+.nav-link.nav-register-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 16px rgba(230, 81, 0, 0.45) !important;
+  background: linear-gradient(135deg, #E65100, #880E4F) !important;
+  color: #FFFFFF !important;
+}
+
+/* Home Registration CTA Section */
+.home-register-banner {
+  margin: 50px auto 40px auto;
+  max-width: 900px;
+  padding: 0 16px;
+}
+
+.register-banner-card {
+  background: linear-gradient(135deg, #FFF9F0, #FFF1DF);
+  border: 2px solid var(--gold);
+  border-radius: 24px;
+  padding: 38px 28px;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(104, 13, 13, 0.08), 0 2px 10px rgba(212, 175, 55, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-banner-card::before {
+  content: 'ॐ';
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 11rem;
+  color: rgba(230, 81, 0, 0.04);
+  pointer-events: none;
+}
+
+.register-pill-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--gold);
+  color: var(--maroon);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
+}
+
+.register-banner-card h3 {
+  font-size: 1.85rem;
+  color: var(--maroon);
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.register-banner-card p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 24px auto;
+  line-height: 1.6;
+}
+
+.btn-register-banner {
+  background: linear-gradient(135deg, var(--primary-saffron), var(--maroon));
+  color: #FFFFFF !important;
+  border: 2px solid var(--gold);
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(230, 81, 0, 0.38);
+  transition: all 0.35s ease;
+}
+
+.btn-register-banner:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(230, 81, 0, 0.5);
+  background: linear-gradient(135deg, #FF6F00, #3a0007);
 }
 
 /* WhatsApp Button & Direct Box */
