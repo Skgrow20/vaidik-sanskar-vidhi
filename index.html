@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>वैदिक संस्कार विधि | Vaidik Sanskar Vidhi - 16 Sanskars</title>
   <meta name="description" content="Complete guide to the 16 Vedic Sanskars (सोलह / સોળ સંસ્કાર) in Hindi, Gujarati and English. Mantras, timings, and rituals.">
-  <link rel="stylesheet" href="style.css?v=2">
-  <link rel="stylesheet" href="animations.css?v=2">
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="animations.css?v=4">
   <style>
     /* Critical Mobile Layout - Guaranteed Immediate Rendering */
     @media (max-width: 600px) {
@@ -88,11 +88,23 @@
         font-size: 0.95rem !important;
         padding: 0 4px !important;
       }
-      .karta-badge {
-        font-size: 0.92rem !important;
-        padding: 6px 14px !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
+      .home-karta-showcase {
+        margin: 20px auto 25px auto !important;
+      }
+      .home-karta-grid {
+        gap: 16px !important;
+      }
+      .home-karta-card {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 16px !important;
+      }
+      .home-karta-big-img {
+        width: 140px !important;
+        height: 140px !important;
+      }
+      .home-karta-name {
+        font-size: 1.25rem !important;
       }
       .hero-cta {
         flex-direction: column !important;
@@ -169,11 +181,32 @@
       <h2 class="hero-title" data-i18n="heroTitle">सोलह संस्कारों से संवारें जीवन की पावन यात्रा</h2>
       <p class="hero-subtitle" data-i18n="heroSubtitle">गर्भाधान से लेकर अन्त्येष्टि तक, मानव जीवन के सर्वांगीण विकास, शुद्धि और मोक्ष हेतु वैदिक विधि एवं मन्त्र।</p>
       
-      <!-- Karta (Author) Badge -->
-      <div class="karta-badge">
-        <span class="karta-icon">🪷</span>
-        <span class="karta-title" data-i18n="kartaTitle">કર્તા:</span>
-        <span class="karta-names" data-i18n="kartaNames">તિથી આર્ય અને પ્રિયંકા આર્ય</span>
+      <!-- Big Karta Profiles Showcase on Homepage -->
+      <div class="home-karta-showcase">
+        <div class="karta-badge-heading">
+          <span class="karta-icon">🪷</span>
+          <span data-i18n="kartaSectionTitle">વૈદિક સંસ્કાર વિધિ કર્તા</span>
+        </div>
+
+        <div class="home-karta-grid">
+          <!-- Tithi Arya Big Card -->
+          <div class="home-karta-card">
+            <div class="home-karta-img-wrap">
+              <img src="tithi.jpeg" alt="Tithi Arya" class="home-karta-big-img">
+            </div>
+            <h3 class="home-karta-name" data-i18n="tithiAryaOnly">તિથી આર્ય</h3>
+            <p class="home-karta-role" data-i18n="kartaRole">વૈદિક સંસ્કાર અને યજ્ઞ-હવન માર્ગદર્શક</p>
+          </div>
+
+          <!-- Priyanka Arya Big Card -->
+          <div class="home-karta-card">
+            <div class="home-karta-img-wrap">
+              <img src="priyanka.jpeg" alt="Priyanka Arya" class="home-karta-big-img">
+            </div>
+            <h3 class="home-karta-name" data-i18n="priyankaAryaOnly">પ્રિયંકા આર્ય</h3>
+            <p class="home-karta-role" data-i18n="kartaRole">વૈદિક સંસ્કાર અને યજ્ઞ-હવન માર્ગદર્શક</p>
+          </div>
+        </div>
       </div>
 
       <div class="hero-cta">
@@ -183,16 +216,6 @@
 
       <!-- Contact & Instagram Strip -->
       <div class="hero-contact-wrap">
-        <div class="contact-pill-item">
-          <span class="contact-badge-label" data-i18n="contactUsLabel">📞 સંપર્ક:</span>
-          <a href="tel:+918128721106" class="contact-person-link">
-            <strong data-i18n="tithiAryaLabel">તિથી આર્ય:</strong> +91 81287 21106
-          </a>
-          <span class="contact-divider">•</span>
-          <a href="tel:+917984723878" class="contact-person-link">
-            <strong data-i18n="priyankaAryaLabel">પ્રિયંકા આર્ય:</strong> +91 79847 23878
-          </a>
-        </div>
         <a href="https://www.instagram.com/vadik_sanskar_vidhi?cplk=djF2MG9iY3FyODhv" target="_blank" class="instagram-btn">
           <svg class="insta-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -263,8 +286,6 @@
           <li><a href="index.html" data-i18n="navHome">मुखपृष्ठ</a></li>
           <li><a href="about.html" data-i18n="navAbout">संस्कार परिचय</a></li>
           <li><a href="contact.html" data-i18n="navContact">संपर्क एवं परामर्श</a></li>
-          <li><a href="tel:+918128721106" data-i18n="footerContactTithi">📞 તિથી આર્ય : +91 81287 21106</a></li>
-          <li><a href="tel:+917984723878" data-i18n="footerContactPriyanka">📞 પ્રિયંકા આર્ય : +91 79847 23878</a></li>
           <li><a href="https://www.instagram.com/vadik_sanskar_vidhi?cplk=djF2MG9iY3FyODhv" target="_blank" style="color: #F9E79F;">📷 vadik_sanskar_vidhi</a></li>
         </ul>
       </div>

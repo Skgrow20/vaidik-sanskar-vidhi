@@ -264,29 +264,139 @@ body {
   line-height: 1.8;
 }
 
+/* Home Page Big Karta Showcase */
+.home-karta-showcase {
+  margin: 25px auto 30px auto;
+  max-width: 800px;
+  width: 100%;
+}
+
+.karta-badge-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--gold);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--maroon);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  margin-bottom: 24px;
+}
+
+.home-karta-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.home-karta-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--border-gold);
+  border-radius: 24px;
+  padding: 26px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(104, 13, 13, 0.08);
+  backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex: 1;
+  min-width: 270px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-karta-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-saffron);
+  box-shadow: 0 16px 38px rgba(230, 81, 0, 0.22);
+}
+
+.home-karta-img-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.home-karta-big-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold);
+  box-shadow: 0 8px 25px rgba(230, 81, 0, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.home-karta-card:hover .home-karta-big-img {
+  transform: scale(1.06);
+  border-color: var(--primary-saffron);
+  box-shadow: 0 12px 30px rgba(230, 81, 0, 0.45);
+}
+
+.home-karta-name {
+  color: var(--maroon);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.home-karta-role {
+  color: var(--primary-saffron);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.home-karta-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-saffron), var(--maroon));
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.home-karta-phone-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.45);
+  color: #fff;
+}
+
 .karta-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.95);
   border: 1.5px solid var(--gold);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-  padding: 8px 24px;
-  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.22);
+  padding: 8px 26px;
+  border-radius: 40px;
   margin-bottom: 30px;
   font-size: 1.05rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
   transition: var(--transition);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .karta-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(230, 81, 0, 0.25);
   border-color: var(--primary-saffron);
 }
 
 .karta-icon {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 }
 
 .karta-title {
@@ -295,9 +405,110 @@ body {
   letter-spacing: 0.5px;
 }
 
-.karta-names {
+.karta-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.karta-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--gold);
+  box-shadow: 0 3px 10px rgba(230, 81, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.karta-person:hover .karta-avatar {
+  transform: scale(1.15);
+  border-color: var(--primary-saffron);
+}
+
+.karta-name {
   color: var(--maroon);
   font-weight: 700;
+}
+
+.karta-and {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* About Page Karta Showcase Cards */
+.karta-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 25px;
+}
+
+.karta-card {
+  background: linear-gradient(145deg, #FFFDF8, #FFF5E6);
+  border: 2px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.karta-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-saffron);
+  box-shadow: var(--shadow-hover);
+}
+
+.karta-large-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold);
+  box-shadow: 0 8px 24px rgba(230, 81, 0, 0.3);
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.karta-card:hover .karta-large-photo {
+  transform: scale(1.06);
+  border-color: var(--primary-saffron);
+}
+
+.karta-card-name {
+  font-size: 1.4rem;
+  color: var(--maroon);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.karta-card-role {
+  font-size: 0.92rem;
+  color: var(--primary-saffron);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* WhatsApp Option Card with Avatar */
+.wa-option-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wa-modal-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 /* Hero Contact & Instagram Styling */
@@ -1277,13 +1488,23 @@ body {
     padding: 0 4px;
   }
 
-  .karta-badge {
-    font-size: 0.92rem;
-    padding: 6px 16px;
-    margin-bottom: 22px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
+    .home-karta-showcase {
+    margin: 20px auto 25px auto !important;
+  }
+  .home-karta-grid {
+    gap: 16px !important;
+  }
+  .home-karta-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 16px !important;
+  }
+  .home-karta-big-img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  .home-karta-name {
+    font-size: 1.25rem !important;
   }
 
   .hero-cta {
