@@ -78,7 +78,8 @@ function updateStaticTexts() {
   // Update Sanskar Select dropdown on Contact page
   const sanskarSelect = document.getElementById('sanskarSelect');
   if (sanskarSelect) {
-    const selectedVal = sanskarSelect.value;
+    const urlSanskar = new URLSearchParams(window.location.search).get('sanskar');
+    const selectedVal = sanskarSelect.value || urlSanskar || '';
     sanskarSelect.innerHTML = `
       <option value="">${trans.contactSelectDefault || '-- Select a Sanskar --'}</option>
       ${sanskarData.map(s => `
@@ -386,6 +387,40 @@ function renderDetailPage() {
             </li>
           `).join('')}
         </ul>
+      </div>
+
+      <!-- Required Havan & Puja Samagri section (Only for Annaprashana, Pumsavana, Garbhadhana, Simantonnayana) -->
+      ${sanskar.samagri ? `
+      <div class="detail-section">
+        <h3 class="detail-section-title">
+          <span>🌿</span> ${trans.samagriLabel || 'જરૂરી હવન તેમજ પૂજન સામગ્રી યાદી:'}
+        </h3>
+        <div class="samagri-container">
+          <ul class="samagri-grid-list">
+            ${(sanskar.samagri[currentLang] || sanskar.samagri.gu || []).map((item, idx) => `
+              <li class="samagri-item">
+                <span class="samagri-num">${idx + 1}</span>
+                <span class="samagri-text">${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+      ` : ''}
+
+      <!-- Direct Contact CTA for this Sanskar -->
+      <div style="background: linear-gradient(135deg, #FFF6E5, #FFEACC); border: 1.5px solid var(--gold); border-radius: 14px; padding: 18px 20px; margin-top: 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+        <div>
+          <h4 style="color: var(--maroon); margin: 0 0 4px 0; font-size: 1.15rem; font-weight: 700;">
+            🕉️ ${currentLang === 'gu' ? 'આ સંસ્કાર વિધિ કે મુહૂર્ત માટે સંપર્ક કરો' : (currentLang === 'hi' ? 'इस संस्कार विधि या मुहूर्त हेतु संपर्क करें' : 'Inquire for this Sanskar Vidhi & Muhurta')}
+          </h4>
+          <p style="margin: 0; color: #555; font-size: 0.92rem;">
+            ${currentLang === 'gu' ? 'તિથી આર્ય અને પ્રિયંકા આર્ય સાથે પરામર્શ કરો' : (currentLang === 'hi' ? 'तिथि आर्य एवं प्रियंका आर्य से परामर्श करें' : 'Consult with Tithi Arya & Priyanka Arya')}
+          </p>
+        </div>
+        <a href="contact.html?sanskar=${sanskar.id}" class="btn-primary" style="padding: 9px 20px; font-size: 0.92rem; border-radius: 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+          💬 ${currentLang === 'gu' ? 'પૂછપરછ / નોંધણી' : (currentLang === 'hi' ? 'पूछताछ / पंजीकरण' : 'Inquire / Register')}
+        </a>
       </div>
 
       <!-- Pagination Next / Prev -->
