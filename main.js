@@ -1,7 +1,7 @@
 // Main Application Script for Vaidik Sanskar Vidhi
 
-// Google Sheets Webhook URL for Excel Backup (Connected & Live)
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycybv99PB4n9RzKTAW3MANDVLkSnraPDUCK7pijfX2AQGoMPo7mW2gPfjNHbqYgiuJaQ/exec';
+// Google Sheets Webhook URL for Excel Backup (Version 3 Connected & Live)
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzMtqokws0Jh_WGSHqSAu3RNL_tLNI5KoYojjA42_70ShZTFw1PZcdGyPi-2xeQfX3a/exec';
 
 let currentLang = localStorage.getItem('sanskar_lang') || 'hi';
 let currentCategory = 'all';
@@ -149,12 +149,19 @@ function setupContactForm() {
         for (const k in backupData) {
           formBody.append(k, backupData[k]);
         }
+        const queryStr = formBody.toString();
+
+        // 1A. Send via Image Beacon (Works 100% on file://, http, mobile, completely bypasses CORS)
+        const beacon = new Image();
+        beacon.src = GOOGLE_SHEET_URL + '?' + queryStr;
+
+        // 1B. Send via POST fetch
         fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: formBody.toString()
-        }).catch(err => console.log('Sheet backup dispatched'));
+          body: queryStr
+        }).catch(() => {});
       } catch (err) {
         console.error('Sheet fetch error:', err);
       }
