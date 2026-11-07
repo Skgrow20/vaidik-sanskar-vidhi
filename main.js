@@ -312,6 +312,150 @@ function getStageLabel(id, lang) {
   }
 }
 
+// Specific Havan & Puja Samagri Data for Sanskars 1, 2, 3, 7 (Built-in guarantee)
+const specificSamagriData = {
+  1: {
+    gu: [
+      "બાજોટ (નોંધ: બાજોટ ના હોય તો પાટલો કાતો ત્રિપાઈ પણ ચાલશે)",
+      "ઘી (દેશી ગાયનું ઘી ૨૫૦ ગ્રામ)",
+      "શ્રીફળ (૧) (આસોપાલવ ૫ પાન)",
+      "ત્રાંબાનો લોટો (૧)",
+      "પ્રસાદ",
+      "૫-૬ કોઈ પણ ફૂલ (ગુલાબ, ગલગોટા, જાસૂદ વગેરેમાંથી)",
+      "વરમાળા (૨)",
+      "કાંસાનો વાટકો, ખીર",
+      "અડધી કાચલી સૂકું નારિયેળ, કાજુ, બદામ (સૂકોમેવો)"
+    ],
+    hi: [
+      "बाजोट / चौकी (नोट: बाजोट न हो तो पाटा या तिपाई भी चलेगी)",
+      "घी (देशी गाय का घी २५० ग्राम)",
+      "श्रीफल (१) (अशोक के ५ पत्ते)",
+      "तांबे का लोटा (१)",
+      "प्रसाद",
+      "५-६ कोई भी पुष्प (गुलाब, गेंदा, गुड़हल आदि में से)",
+      "वरमाला (२)",
+      "कांस्य का कटोरा, खीर",
+      "सूखे नारियल की आधी वाटी, काजू, बादाम (सूखा मेवा)"
+    ],
+    en: [
+      "Bajot / Low wooden stool (Note: Flat wooden board or tripod stool also works)",
+      "Ghee (Pure Desi Cow Ghee 250g)",
+      "Coconut (1) with 5 Ashoka leaves",
+      "Copper Lota / Kalash (1)",
+      "Prasada",
+      "5 to 6 fresh flowers (Rose, Marigold, Hibiscus, etc.)",
+      "Floral Garlands / Varamala (2)",
+      "Bronze (Kansa) bowl and sweet milk pudding (Kheer)",
+      "Half dry coconut shell, cashews, almonds (Dry fruits)"
+    ]
+  },
+  2: {
+    gu: [
+      "બાજોટ (નોંધ: બાજોટ ના હોય તો પાટલો કાતો ત્રિપાઈ પણ ચાલશે)",
+      "ઘી (દેશી ગાયનું ઘી ૨૫૦ ગ્રામ)",
+      "શ્રીફળ (૧) (આસોપાલવ ૫ પાન)",
+      "ત્રાંબાનો લોટો (૧)",
+      "પ્રસાદ",
+      "૫-૬ કોઈ પણ ફૂલ (ગુલાબ, ગલગોટા, જાસૂદ વગેરેમાંથી)",
+      "વરમાળા (૨)",
+      "ગિલોયનો રસ અને વડના પાનનો રસ મિક્સ કરીને કપડાથી ગાળીને રાખવો",
+      "અડધી કાચલી સૂકું નારિયેળ, કાજુ, બદામ (સૂકોમેવો)"
+    ],
+    hi: [
+      "बाजोट / चौकी (नोट: बाजोट न हो तो पाटा या तिपाई भी चलेगी)",
+      "घी (देशी गाय का घी २५० ग्राम)",
+      "श्रीफल (१) (अशोक के ५ पत्ते)",
+      "तांबे का लोटा (१)",
+      "प्रसाद",
+      "५-६ कोई भी पुष्प (गुलाब, गेंदा, गुड़हल आदि में से)",
+      "वरमाला (२)",
+      "गिलोय का रस और बरगद के पत्ते का रस मिलाकर कपड़े से छानकर रखना",
+      "सूखे नारियल की आधी वाटी, काजू, बादाम (सूखा मेवा)"
+    ],
+    en: [
+      "Bajot / Low wooden stool (Note: Flat wooden board or tripod stool also works)",
+      "Ghee (Pure Desi Cow Ghee 250g)",
+      "Coconut (1) with 5 Ashoka leaves",
+      "Copper Lota / Kalash (1)",
+      "Prasada",
+      "5 to 6 fresh flowers (Rose, Marigold, Hibiscus, etc.)",
+      "Floral Garlands / Varamala (2)",
+      "Fresh Giloy juice mixed with Banyan (Vada) leaf juice, strained through a clean cloth",
+      "Half dry coconut shell, cashews, almonds (Dry fruits)"
+    ]
+  },
+  3: {
+    gu: [
+      "બાજોટ (નોંધ: બાજોટ ના હોય તો પાટલો કાતો ત્રિપાઈ પણ ચાલશે)",
+      "ઘી (દેશી ગાયનું ઘી ૨૫૦ ગ્રામ)",
+      "શ્રીફળ (૧) (આસોપાલવ ૫ પાન)",
+      "ત્રાંબાનો લોટો (૧)",
+      "પ્રસાદ",
+      "અડધી કાચલી સૂકું નારિયેળ, કાજુ, બદામ (સૂકોમેવો)",
+      "૫-૬ કોઈ પણ ફૂલ (ગુલાબ, ગલગોટા, જાસૂદ વગેરેમાંથી)",
+      "વરમાળા (૨)",
+      "ખીચડી (મીઠું નાખવું નહીં)",
+      "માથામાં નાખવાનું તેલ, કાંસકો, ગુલાબનું ફૂલ"
+    ],
+    hi: [
+      "बाजोट / चौकी (नोट: बाजोट न हो तो पाटा या तिपाई भी चलेगी)",
+      "घी (देशी गाय का घी २५० ग्राम)",
+      "श्रीफल (१) (अशोक के ५ पत्ते)",
+      "तांबे का लोटा (१)",
+      "प्रसाद",
+      "सूखे नारियल की आधी वाटी, काजू, बादाम (सूखा मेवा)",
+      "५-६ कोई भी पुष्प (गुलाब, गेंदा, गुड़हल आदि में से)",
+      "वरमाला (२)",
+      "खिचड़ी (नमक नहीं डालना)",
+      "बालों का तेल, कंघी, गुलाब का फूल"
+    ],
+    en: [
+      "Bajot / Low wooden stool (Note: Flat wooden board or tripod stool also works)",
+      "Ghee (Pure Desi Cow Ghee 250g)",
+      "Coconut (1) with 5 Ashoka leaves",
+      "Copper Lota / Kalash (1)",
+      "Prasada",
+      "Half dry coconut shell, cashews, almonds (Dry fruits)",
+      "5 to 6 fresh flowers (Rose, Marigold, Hibiscus, etc.)",
+      "Floral Garlands / Varamala (2)",
+      "Khichdi (Strictly without salt)",
+      "Hair oil, comb, and a fresh Rose flower"
+    ]
+  },
+  7: {
+    gu: [
+      "બાજોટ (નોંધ: બાજોટ ના હોય તો પાટલો કાતો ત્રિપાઈ પણ ચાલશે)",
+      "ઘી (દેશી ગાયનું ઘી ૨૫૦ ગ્રામ)",
+      "શ્રીફળ (૧) (આસોપાલવ ૫ પાન)",
+      "ત્રાંબાનો લોટો (૧)",
+      "પ્રસાદ",
+      "૫-૬ કોઈ પણ ફૂલ (ગુલાબ, ગલગોટા, જાસૂદ વગેરેમાંથી)",
+      "ખીર નાની વાટકી જેટલી",
+      "અડધી કાચલી સૂકું નારિયેળ, કાજુ, બદામ (સૂકોમેવો)"
+    ],
+    hi: [
+      "बाजोट / चौकी (नोट: बाजोट न हो तो पाटा या तिपाई भी चलेगी)",
+      "घी (देशी गाय का घी २५० ग्राम)",
+      "श्रीफल (१) (अशोक के ५ पत्ते)",
+      "तांबे का लोटा (१)",
+      "प्रसाद",
+      "५-६ कोई भी पुष्प (गुलाब, गेंदा, गुड़हल आदि में से)",
+      "खीर (छोटी कटोरी जितनी)",
+      "सूखे नारियल की आधी वाटी, काजू, बादाम (सूखा मेवा)"
+    ],
+    en: [
+      "Bajot / Low wooden stool (Note: Flat wooden board or tripod stool also works)",
+      "Ghee (Pure Desi Cow Ghee 250g)",
+      "Coconut (1) with 5 Ashoka leaves",
+      "Copper Lota / Kalash (1)",
+      "Prasada",
+      "5 to 6 fresh flowers (Rose, Marigold, Hibiscus, etc.)",
+      "Sweet milk rice pudding (Kheer - one small bowl)",
+      "Half dry coconut shell, cashews, almonds (Dry fruits)"
+    ]
+  }
+};
+
 // Render Individual Sanskar Detail Page (sanskar.html)
 function renderDetailPage() {
   const container = document.getElementById('detailContainer');
@@ -321,6 +465,8 @@ function renderDetailPage() {
   const sanskarId = parseInt(urlParams.get('id')) || 1;
   const sanskar = sanskarData.find(s => s.id === sanskarId) || sanskarData[0];
   const trans = siteTranslations[currentLang] || siteTranslations.hi;
+  const samagriObj = (sanskar && sanskar.samagri) || specificSamagriData[sanskar.id];
+  const samagriList = samagriObj ? (samagriObj[currentLang] || samagriObj.gu || samagriObj.hi || []) : [];
 
   // Set document title
   document.title = `${sanskar.name[currentLang] || sanskar.name.hi} | ${trans.siteTitle}`;
@@ -390,14 +536,14 @@ function renderDetailPage() {
       </div>
 
       <!-- Required Havan & Puja Samagri section (Only for Annaprashana, Pumsavana, Garbhadhana, Simantonnayana) -->
-      ${sanskar.samagri ? `
+      ${samagriList && samagriList.length > 0 ? `
       <div class="detail-section">
         <h3 class="detail-section-title">
-          <span>🌿</span> ${trans.samagriLabel || 'જરૂરી હવન તેમજ પૂજન સામગ્રી યાદી:'}
+          <span>🌿</span> ${(trans && trans.samagriLabel) || (currentLang === 'gu' ? 'જરૂરી હવન તેમજ પૂજન સામગ્રી યાદી:' : (currentLang === 'hi' ? 'आवश्यक हवन एवं पूजन सामग्री सूची:' : 'Required Havan & Puja Samagri List:'))}
         </h3>
         <div class="samagri-container">
           <ul class="samagri-grid-list">
-            ${(sanskar.samagri[currentLang] || sanskar.samagri.gu || []).map((item, idx) => `
+            ${samagriList.map((item, idx) => `
               <li class="samagri-item">
                 <span class="samagri-num">${idx + 1}</span>
                 <span class="samagri-text">${item}</span>
