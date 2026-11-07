@@ -145,11 +145,15 @@ function setupContactForm() {
     // 1. Save to Google Sheets (Central Excel Backup in Cloud)
     if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.trim() !== '') {
       try {
+        const formBody = new URLSearchParams();
+        for (const k in backupData) {
+          formBody.append(k, backupData[k]);
+        }
         fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(backupData)
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: formBody.toString()
         }).catch(err => console.log('Sheet backup dispatched'));
       } catch (err) {
         console.error('Sheet fetch error:', err);
