@@ -541,12 +541,12 @@ function renderDetailPage() {
         <h3 class="detail-section-title">
           <span>🌿</span> ${(trans && trans.samagriLabel) || (currentLang === 'gu' ? 'જરૂરી હવન તેમજ પૂજન સામગ્રી યાદી:' : (currentLang === 'hi' ? 'आवश्यक हवन एवं पूजन सामग्री सूची:' : 'Required Havan & Puja Samagri List:'))}
         </h3>
-        <div class="samagri-container">
-          <ul class="samagri-grid-list">
+        <div class="samagri-container" style="background: linear-gradient(145deg, #FCF9F2, #F8F1E5); border: 1.5px solid #E6D7BD; border-radius: 16px; padding: 22px 20px; box-shadow: inset 0 2px 6px rgba(104, 13, 13, 0.03); margin-top: 15px;">
+          <ul class="samagri-grid-list" style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px;">
             ${samagriList.map((item, idx) => `
-              <li class="samagri-item">
-                <span class="samagri-num">${idx + 1}</span>
-                <span class="samagri-text">${item}</span>
+              <li class="samagri-item" style="display: flex; align-items: flex-start; gap: 12px; background: #FFFFFF; border: 1px solid #EEDFCA; border-radius: 12px; padding: 12px 14px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);">
+                <span class="samagri-num" style="background: linear-gradient(135deg, #2D6A4F, #1B4332); color: #FFFFFF; min-width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;">${idx + 1}</span>
+                <span class="samagri-text" style="font-size: 0.98rem; color: #2D241E; line-height: 1.55; font-weight: 500;">${item}</span>
               </li>
             `).join('')}
           </ul>
