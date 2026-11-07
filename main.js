@@ -151,11 +151,7 @@ function setupContactForm() {
         }
         const queryStr = formBody.toString();
 
-        // 1A. Send via Image Beacon (Works 100% on file://, http, mobile, completely bypasses CORS)
-        const beacon = new Image();
-        beacon.src = GOOGLE_SHEET_URL + '?' + queryStr;
-
-        // 1B. Send via POST fetch
+        // Send single POST request to Google Sheets
         fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
