@@ -1,5 +1,8 @@
 // Main Application Script for Vaidik Sanskar Vidhi
 
+// Google Sheets Webhook URL for Excel Backup (Connected & Live)
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycybv99PB4n9RzKTAW3MANDVLkSnraPDUCK7pijfX2AQGoMPo7mW2gPfjNHbqYgiuJaQ/exec';
+
 let currentLang = localStorage.getItem('sanskar_lang') || 'hi';
 let currentCategory = 'all';
 let searchQuery = '';
@@ -128,13 +131,36 @@ function setupContactForm() {
 
     currentWaMessage = waMessage;
 
-    // Save to localStorage as backup
+    // Prepare Inquiry Data for Excel / Google Sheet Backup
+    const backupData = {
+      date: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      name: name,
+      phone: phone,
+      email: email,
+      sanskar: sanskarText,
+      location: location,
+      message: message
+    };
+
+    // 1. Save to Google Sheets (Central Excel Backup in Cloud)
+    if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.trim() !== '') {
+      try {
+        fetch(GOOGLE_SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(backupData)
+        }).catch(err => console.log('Sheet backup dispatched'));
+      } catch (err) {
+        console.error('Sheet fetch error:', err);
+      }
+    }
+
+    // 2. Save to localStorage as browser backup
     try {
       const inquiries = JSON.parse(localStorage.getItem('sanskar_inquiries') || '[]');
-      inquiries.unshift({
-        name, phone, email, sanskar: sanskarText, location, message, date: new Date().toLocaleString()
-      });
-      localStorage.setItem('sanskar_inquiries', JSON.stringify(inquiries.slice(0, 50)));
+      inquiries.unshift(backupData);
+      localStorage.setItem('sanskar_inquiries', JSON.stringify(inquiries.slice(0, 100)));
     } catch (err) {
       console.error(err);
     }
